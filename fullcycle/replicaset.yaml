@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: angularserver
+  labels:
+    app: angularserver
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: angularserver
+  template:
+    metadata:
+      labels:
+        app: angularserver
+    spec:
+      containers:
+      - name: angularserver
+        image: evertonrps/angular-docker:latest
+
